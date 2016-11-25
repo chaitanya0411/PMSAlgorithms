@@ -8,13 +8,13 @@ For example, if the input strings are GCGCGAT, CACGTGA, and CGGTGCC; l = 3 and d
 
 How to use ?
 
-Eclipse Arguments :
+Arguments :
 Argument 1 : comma separated input files names having the input strings
 Argument 2 : comma separated output files to generate the motifs. There is 1:1 correlation between input and output files i.e 1st input files putput will be generated in the 1st output file.
 Argument 3 : motif length(l)
 Argument 4 : hamming distance(d)
 
-Sample arguments : input1,input2 output1,output2 9 2
+Sample arguments : input1,input2 output1,output2 5 2
 
 
 .
