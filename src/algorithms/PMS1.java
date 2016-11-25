@@ -3,6 +3,7 @@ package algorithms;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+import enums.AlphabetType;
 import exceptions.InvalidInputException;
 import utils.PMSHelper;
 
@@ -10,9 +11,9 @@ public class PMS1 extends PMS
 {
 
     public PMS1(ArrayList<String> inputStrings, int motifLength,
-                int maxHammingDistance)
+                int maxHammingDistance, AlphabetType alphabetType)
     {
-        super(inputStrings, motifLength, maxHammingDistance);
+        super(inputStrings, motifLength, maxHammingDistance, alphabetType);
     }
     
     public HashSet<String> process()

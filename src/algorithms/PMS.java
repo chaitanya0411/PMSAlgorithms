@@ -7,6 +7,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
+import enums.AlphabetType;
+import utils.Constants;
 import utils.PMSHelper;
 
 public class PMS
@@ -17,12 +19,21 @@ public class PMS
     protected HashMap<Character, List<Character>> choiceMap;
     
 	protected PMS(ArrayList<String> inputStrings, int motifLength,
-	              int maxHammingDistance)
+	              int maxHammingDistance,
+	              AlphabetType alphabetType)
 	{
 	    this.inputStrings = inputStrings;
 	    this.motifLength = motifLength;
 	    this.maxHammingDistance = maxHammingDistance;
-	    this.choiceMap = PMSHelper.getDNAChoiceMap();
+	    
+	    if(alphabetType == AlphabetType.DNA)
+	    {
+	        this.choiceMap = PMSHelper.getDNAChoiceMap();
+	    }
+	    else if(alphabetType == AlphabetType.PROTEIN)
+        {
+            this.choiceMap = PMSHelper.getProteinChoiceMap();
+        }
 	}
 	
 	protected HashSet<String> intersectNeighborhood(HashSet<String> set1,

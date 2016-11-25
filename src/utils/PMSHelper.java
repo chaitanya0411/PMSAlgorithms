@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import exceptions.InvalidInputException;
 
@@ -127,15 +129,54 @@ public class PMSHelper
 	
 	public static HashMap<Character, List<Character>> getDNAChoiceMap()
 	{
-	    HashMap<Character, List<Character>> dnaMap =
-	        new HashMap<Character, List<Character>>();
-	    
-	    dnaMap.put('A', new ArrayList<Character>(Arrays.asList('C', 'G', 'T')));
-	    dnaMap.put('C', new ArrayList<Character>(Arrays.asList('A', 'G', 'T')));
-	    dnaMap.put('G', new ArrayList<Character>(Arrays.asList('A', 'C', 'T')));
-	    dnaMap.put('T', new ArrayList<Character>(Arrays.asList('A', 'C', 'G')));
-	    
-	    return dnaMap;
+	    List<Character> alphabets =
+            Arrays.asList(new Character[]{'A', 'C', 'G', 'T'});
+	    return getChoiceMap(alphabets);
 	}
+	
+	public static HashMap<Character, List<Character>> getProteinChoiceMap()
+    {
+        List<Character> alphabets =
+            Arrays.asList(
+                new Character[]{
+                    'A', 'R', 'N', 'D', 'C', 'E', 'Q', 'G', 'H', 'I',
+                    'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V'
+                }
+            );
+        return getChoiceMap(alphabets);
+    }
+	
+	private static HashMap<Character, List<Character>> getChoiceMap(
+        List<Character> alphabets
+    )
+    {
+	    HashMap<Character, List<Character>> map =
+	            new HashMap<Character, List<Character>>();
+	    
+	    for(int i = 0; i < alphabets.size(); i++)
+	    {
+	        for(int j = 0; j < alphabets.size(); j++)
+	        {
+	            if(i != j)
+	            {
+	                List<Character> list;
+	                
+	                if(null == map.get(alphabets.get(i)))
+	                {
+	                    list = new ArrayList<Character>();
+	                    map.put(alphabets.get(i), list);
+	                }
+	                else
+	                {
+	                    list = map.get(alphabets.get(i));;
+	                }
+	                
+	                list.add(alphabets.get(j));
+	            }
+	        }
+	    }
+        
+        return map;
+    }
 	
 }
