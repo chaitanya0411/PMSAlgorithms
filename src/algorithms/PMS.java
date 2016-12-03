@@ -31,9 +31,9 @@ public class PMS
 	        this.choiceMap = PMSHelper.getDNAChoiceMap();
 	    }
 	    else if(alphabetType == AlphabetType.PROTEIN)
-        {
-            this.choiceMap = PMSHelper.getProteinChoiceMap();
-        }
+            {
+                this.choiceMap = PMSHelper.getProteinChoiceMap();
+            }
 	}
 	
 	protected HashSet<String> intersectNeighborhood(HashSet<String> set1,
