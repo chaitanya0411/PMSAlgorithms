@@ -1,4 +1,4 @@
-Sequence motifs are short, recurring patterns in DNA that are presumed to have a biological function. Often they indicate sequence-specific binding sites for proteins such as nucleases and transcription factors (TF). Others are involved in important processes at the RNA level, including ribosome binding, mRNA processing (splicing, editing, polyadenylation) and transcription termination.
+Sequence motifs are short, recurring patterns in DNA/Protein that are presumed to have a biological function. Often they indicate sequence-specific binding sites for proteins such as nucleases and transcription factors (TF). Others are involved in important processes at the RNA level, including ribosome binding, mRNA processing (splicing, editing, polyadenylation) and transcription termination.
 
 PMS is planted motif search which is the process of finding motifs in a set of input strings.
 
@@ -9,6 +9,7 @@ For example, if the input strings are GCGCGAT, CACGTGA, and CGGTGCC; l = 3 and d
 How to use ?
 
 Arguments :
+
 Argument 1 : comma separated input files names having the input strings
 Argument 2 : comma separated output files to generate the motifs. There is 1:1 correlation between input and output files i.e 1st input files putput will be generated in the 1st output file.
 Argument 3 : motif length(l)
@@ -16,5 +17,9 @@ Argument 4 : hamming distance(d)
 
 Sample arguments : input1,input2 output1,output2 5 2
 
+Sample inputs and outputs tested are available in the test folder. Currently only protein and DNA alphabet is supported.
 
-.
+TODO :
+
+1. Input to be accepted in FASTA/Genbank format.
+2. Directory level input with files.
